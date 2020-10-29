@@ -17,23 +17,28 @@ public class pipeIn extends pipe{
     {
         System.out.println("The in-pipe is running!");
         BufferedReader br = new BufferedReader(in);
+       
 
         try { 
-          StringBuilder sb = new StringBuilder();
+          
           String line = br.readLine();
+          StringBuilder sb = new StringBuilder();
       
           while (line != null) 
           {
-              
+            
               sb.append(line);
-              sb.append(System.lineSeparator());
+              sb.append("\n");
               line = br.readLine();
               
               if(line != null)
               {
                 int length = line.length();
-                out.write(line, 0, length);
+                //out.write(line, 0, length);
+                out.write(sb.toString(), 0, sb.length());
               }
+
+              sb.delete(0, sb.length());
               
           }
           //String everything = sb.toString();

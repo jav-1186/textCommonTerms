@@ -34,7 +34,7 @@ public class porterFilter extends filter {
                        for (int c = 0; c < j; c++) s.add(w[c]);
 
                        /* or, to test add(char[] w, int j) */
-                       /* s.add(w, j); */
+                       //s.add(w, j); 
 
                        s.stem();
                        {  String u;
@@ -44,15 +44,17 @@ public class porterFilter extends filter {
 
                           /* to test getResultBuffer(), getResultLength() : */
                           /* u = new String(s.getResultBuffer(), 0, s.getResultLength()); */
-
-                          System.out.print(u);
+                          System.out.println(u);
+                          u = u + "\n";
+                          
+                          out.write(u, 0, u.length());
                        }
                        break;
                     }
                  }
               }
               if (ch < 0) break;
-              System.out.print((char)ch);
+              //System.out.print((char)ch);
            }
          }
          catch (IOException e)

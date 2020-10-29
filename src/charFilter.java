@@ -33,14 +33,11 @@ public class charFilter extends filter{
                 for (int i = 0; i < words.length; i++)
                 {
                 
-                    words[i] = words[i].replaceAll("[^a-zA-Z]", " ");
-
+                    words[i] = words[i].replaceAll("[^a-zA-Z]", "");
                     words[i] = words[i].trim();
 
-                    
-                    
                     String toSend = words[i]+ "\n";
-                    //System.out.println(toSend);
+                    //System.out.println(words[i]);
 
                     charWords.add(toSend);
                     

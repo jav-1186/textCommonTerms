@@ -29,11 +29,14 @@ public class App {
              * Starting the pipes and filters
              */
             pipeOut last = new pipeOut(out);
-            filter two = new stopWFilter(last);
+            filter three = new porterFilter(last);
+            filter two = new stopWFilter(three);
+           // filter two = new stopWFilter(last);
             filter one = new charFilter(two);
             pipeIn source = new pipeIn(one, in);
 
             last.start();
+            three.start();
             two.start();
             one.start();
             source.start();
@@ -49,11 +52,14 @@ public class App {
              * Starting the pipes and filters
              */
             pipeOut last = new pipeOut(out);
-            filter two = new stopWFilter(last);
+            filter three = new porterFilter(last);
+            filter two = new stopWFilter(three);
+           // filter two = new stopWFilter(last);
             filter one = new charFilter(two);
             pipeIn source = new pipeIn(one, in);
 
             last.start();
+            three.start();
             two.start();
             one.start();
             source.start();
@@ -68,11 +74,14 @@ public class App {
              * Starting the pipes and filters
              */
             pipeOut last = new pipeOut(out);
-            filter two = new stopWFilter(last);
+            filter three = new porterFilter(last);
+            filter two = new stopWFilter(three);
+           // filter two = new stopWFilter(last);
             filter one = new charFilter(two);
             pipeIn source = new pipeIn(one, in);
 
             last.start();
+            three.start();
             two.start();
             one.start();
             source.start();

@@ -66,7 +66,7 @@ public class pipeOut extends pipe{
             Comparator<Map.Entry<String, Double>> comparator = Comparator.comparing(Map.Entry::getValue);
             Collections.sort(list, comparator.reversed());
 
-            System.out.println(list.listIterator(10));
+            //System.out.println(list.listIterator(10));
             
             int p = 0;
             System.out.println("Top ten appearing terms:");
