@@ -2,16 +2,27 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
 
+/**
+ * This class executes the porter filter provided by the taurus snowball link in the homework. 
+ * Credit belongs to "http://snowball.tartarus.org/algorithms/porter/stemmer. html"
+ */
 public class porterFilter extends filter {
 
+    /**
+     * Constructor that takes in a pipe object and connected the writer to the reader. 
+     */
     public porterFilter(pipe sink) throws IOException 
     { 
         super(sink); 
     }
 
+    /**
+     * Provides porter filtering on the text per the algorithm provided 
+     */
     public void filtering(Reader in, Writer out) throws IOException
     {
 
+        long startTime = System.nanoTime();
         System.out.println("Porter filtering running!");
         char[] w = new char[501];
         Stemmer s = new Stemmer();
@@ -44,9 +55,12 @@ public class porterFilter extends filter {
 
                           /* to test getResultBuffer(), getResultLength() : */
                           /* u = new String(s.getResultBuffer(), 0, s.getResultLength()); */
-                          System.out.println(u);
+                          //System.out.println(u);
                           u = u + "\n";
                           
+                          /**
+                           * Sending to the last sink
+                           */
                           out.write(u, 0, u.length());
                        }
                        break;
@@ -61,9 +75,12 @@ public class porterFilter extends filter {
          {  
              System.out.println("error reading ");
          }
+         long stopTime = System.nanoTime();
+         long time = (stopTime - startTime);
+         //System.out.println("porterFilter runtime = " + time + " nanoseconds"); 
       }
      
-        
+      
         
     }
 
